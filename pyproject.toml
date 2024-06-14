@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "drf-ai-ms"
+version = "0.1.0"
+description = "AI microservice using Django, DRF and HuggingFace Hub"
+authors = ["Yousuf Abu Shanab"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "drf_ai_ms" }]
+homepage = "https://github.com/youzarsiph/drf-ai-ms/"
+repository = "https://github.com/youzarsiph/drf-ai-ms/"
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.0.6"
+djangorestframework = "^3.15.1"
+drf-redesign = "^0.3.9"
+huggingface-hub = "^0.23.4"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
