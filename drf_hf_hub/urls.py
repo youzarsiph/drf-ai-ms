@@ -2,11 +2,13 @@
 
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from drf_ai_ms.views import MicroserviceViewSet
+from drf_hf_gub.views import TextViewSet, RootAPIView
 
 # Create your URLConf here.
 router = DefaultRouter(trailing_slash=False)
-router.register("", MicroserviceViewSet, "ms")
+router.register("text", TextViewSet, "txt")
+
+router.APIRootView = RootAPIView
 
 urlpatterns = [
     path("", include(router.urls)),

@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "drf-ai-ms"
+name = "drf-hf-hub"
 version = "0.1.0"
 description = "AI microservice using Django, DRF and HuggingFace Hub"
 authors = ["Yousuf Abu Shanab"]
 license = "MIT"
 readme = "README.md"
-packages = [{ include = "drf_ai_ms" }]
-homepage = "https://github.com/youzarsiph/drf-ai-ms/"
-repository = "https://github.com/youzarsiph/drf-ai-ms/"
+packages = [{ include = "drf_hf_hub" }]
+homepage = "https://github.com/youzarsiph/drf-hf-hub/"
+repository = "https://github.com/youzarsiph/drf-hf-hub/"
 
 
 [tool.poetry.dependencies]
