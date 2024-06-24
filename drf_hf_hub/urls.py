@@ -2,7 +2,7 @@
 
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from drf_hf_gub.views import TextViewSet, RootAPIView
+from drf_hf_hub.views import TextViewSet, RootAPIView
 
 # Create your URLConf here.
 router = DefaultRouter(trailing_slash=False)

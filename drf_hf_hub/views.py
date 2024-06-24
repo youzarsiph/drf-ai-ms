@@ -9,7 +9,7 @@ from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.routers import APIRootView
 from rest_framework.viewsets import GenericViewSet
-from drf_hf_gub import serializers
+from drf_hf_hub import serializers
 
 
 # HF Inference Client
