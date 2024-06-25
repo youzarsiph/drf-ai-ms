@@ -28,41 +28,41 @@ Here is a list of supported tasks in the API:
 
 Clone the repo:
 
-```console
+```bash
 git clone https://github.com/youzarsiph/drf-hf-hub
 ```
 
 Install `poetry`, a Python tool for building and publishing packages:
 
-```console
+```bash
 python -m pip install poetry
 ```
 
 Install dependencies:
 
-```console
+```bash
 python -m poetry install
 ```
 
 Activate virtual environment
 
-```console
+```bash
 python -m poetry env use python
 ```
 
 Create a new Django project:
 
-```console
-python -m django startproject mysite
+```bash
+python -m django startproject project
 ```
 
-Copy `drf_hf_hub` to `mysite`:
+Copy `drf_hf_hub` to `project`:
 
-```console
-cp -r drf_hf_hub mysite/drf_hf_hub
+```bash
+cp -r drf_hf_hub project/drf_hf_hub
 ```
 
-Configure project settings, open `mysite/settings.py`:
+Configure project settings, open `project/settings.py`:
 
 ```python
 ...
@@ -79,7 +79,7 @@ INSTALLED_APPS = [
 ...
 ```
 
-Then open `mysite/urls.py`:
+Then open `project/urls.py`:
 
 ```python
 ...
@@ -96,13 +96,13 @@ urlpatterns = [
 
 Run `check`:
 
-```console
+```bash
 python manage.py check
 ```
 
 Create a `.env` file that contains your HuggingFace access token, you may need to create an account on [HuggingFace](https://huggingface.co/):
 
-```bash
+```env
 # Your HF access token
 HF_TOKEN=hf_**********************************
 
