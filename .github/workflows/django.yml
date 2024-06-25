@@ -21,10 +21,10 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install poetry
           python -m poetry install
-          python -m poetry env use python
 
       - name: Create Django project
         run: |
+          python -m poetry env use python
           python -m django startproject project
           cp -r drf_hf_hub project/drf_hf_hub
 
@@ -36,6 +36,7 @@ jobs:
 
       - name: Run check and tests
         run: |
+          python -m poetry env use python
           cd project
           python manage.py check
           python manage.py test
