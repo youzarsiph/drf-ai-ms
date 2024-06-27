@@ -3,6 +3,8 @@
 [![Ruff Lint](https://github.com/youzarsiph/drf-hf-hub/actions/workflows/ruff.yml/badge.svg)](https://github.com/youzarsiph/drf-hf-hub/actions/workflows/ruff.yml)
 [![Black Format](https://github.com/youzarsiph/drf-hf-hub/actions/workflows/black.yml/badge.svg)](https://github.com/youzarsiph/drf-hf-hub/actions/workflows/black.yml)
 [![Django CI](https://github.com/youzarsiph/drf-hf-hub/actions/workflows/django.yml/badge.svg)](https://github.com/youzarsiph/drf-hf-hub/actions/workflows/django.yml)
+[![Docker](https://github.com/youzarsiph/drf-hf-hub/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/youzarsiph/drf-hf-hub/actions/workflows/docker-publish.yml)
+[![Docker Image CI](https://github.com/youzarsiph/drf-hf-hub/actions/workflows/docker-image.yml/badge.svg)](https://github.com/youzarsiph/drf-hf-hub/actions/workflows/docker-image.yml)
 
 Django REST Framework micro service for common AI tasks using HuggingFace Hub
 
