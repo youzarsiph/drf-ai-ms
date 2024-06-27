@@ -20,11 +20,6 @@ RUN echo "INSTALLED_APPS += ['drf_hf_hub', 'drf_redesign', 'rest_framework']" >>
 RUN echo "from django.urls import include" >> project/urls.py
 RUN echo "urlpatterns += [path('', include('drf_hf_hub.urls')), path('', include('rest_framework.urls'))]" >> project/urls.py
 
-# Creates a non-root user with an explicit UID and adds permission to access the /app folder
-# For more info, please refer to https://aka.ms/vscode-docker-python-configure-containers
-RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /app
-USER appuser
-
 COPY . /app
 WORKDIR /app
 
