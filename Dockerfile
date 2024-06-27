@@ -15,7 +15,7 @@ RUN python -m pip install -r requirements.txt
 
 # Create new Django project and configure the settings
 RUN python -m django startproject project
-RUN cp -r drf_hf_hub project/drf_hf_hub
+COPY drf_hf_hub project/drf_hf_hub
 RUN echo "INSTALLED_APPS += ['drf_hf_hub', 'drf_redesign', 'rest_framework']" >> project/settings.py
 RUN echo "from django.urls import include" >> project/urls.py
 RUN echo "urlpatterns += [path('', include('drf_hf_hub.urls')), path('', include('rest_framework.urls'))]" >> project/urls.py
