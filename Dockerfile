@@ -9,16 +9,17 @@ ENV PYTHONDONTWRITEBYTECODE=1
 # Turns off buffering for easier container logging
 ENV PYTHONUNBUFFERED=1
 
-# Install pip requirements
+# Install pip requirements, create new Django project and configure the settings
 COPY requirements.txt .
-RUN python -m pip install -r requirements.txt
+RUN\
+    python -m pip install -r requirements.txt\
+    && python -m django startproject project
 
-# Create new Django project and configure the settings
-RUN python -m django startproject project
 COPY drf_hf_hub project/drf_hf_hub
-RUN echo "INSTALLED_APPS += ['drf_hf_hub', 'drf_redesign', 'rest_framework']" >> project/settings.py
-RUN echo "from django.urls import include" >> project/urls.py
-RUN echo "urlpatterns += [path('', include('drf_hf_hub.urls')), path('', include('rest_framework.urls'))]" >> project/urls.py
+RUN\
+    echo "INSTALLED_APPS += ['drf_hf_hub', 'drf_redesign', 'rest_framework']" >> project/settings.py\
+    && echo "from django.urls import include" >> project/urls.py\
+    && echo "urlpatterns += [path('', include('drf_hf_hub.urls')), path('', include('rest_framework.urls'))]" >> project/urls.py
 
 COPY . /app
 WORKDIR /app
@@ -28,5 +29,4 @@ COPY --from=build-env /app /app
 WORKDIR /app
 
 # During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
-# File wsgi.py was not found. Please enter the Python path to wsgi file.
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "project.wsgi"]
